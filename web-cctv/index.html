@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>CCTV</title>
+  </head>
+  <style>
+    body {
+      width: 1400px;
+      margin: auto;
+    }
+    h1 {
+      text-align: center;
+    }
+    #cctv {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    #All {
+      display: flex;
+      flex-wrap: wrap;
+      /* margin: auto; */
+      width: 600px;
+      height: 300px;
+      object-fit: fill;
+    }
+    #one #big {
+      margin-top: 0px;
+      padding-top: 0px;
+      /* margin-left: 550px; */
+      width: 780px;
+      height: 1000px;
+    }
+  </style>
+  <script>
+    var order = 1;
+    function printUrl() {
+      if (order == 9) alert("8개까지만 감시할 수 있습니다");
+      else {
+        var newDiv = document.createElement("div");
+        newDiv.innerHTML =
+          "<button onclick='viewBigger(" +
+          order +
+          ")''><iframe onmouseover='viewBigger(" +
+          order +
+          ")' id='" +
+          order +
+          "' src=''' style='width: 250px; height: 250px'></iframe></button>";
+        var all = document.getElementById("All");
+        all.appendChild(newDiv);
+        const name = document.getElementById("my_url").value;
+        document.getElementById(String(order)).src = name;
+        order++;
+      }
+    }
+    var click;
+    function viewBigger(click) {
+      const name = document.getElementById(String(click)).src;
+      document.getElementById("big").src = name;
+    }
+  </script>
+  <body>
+    <h1>⭐️ My WebPage CCTV ⭐️</h1>
+    감시할 홈페이지 주소를 입력하세요 :
+    <input
+      type="text"
+      id="my_url"
+      size="30"
+      onKeypress="javascript:if(event.keyCode==13) {printUrl()}"
+    />
+    <div id="cctv">
+      <section id="All"></section>
+      <section id="one">
+        ➡️ 클릭해서 크게 보기<br />
+        <iframe id="big" src=""></iframe>
+      </section>
+    </div>
+  </body>
+</html>
