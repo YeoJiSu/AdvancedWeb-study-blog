@@ -7,10 +7,28 @@
       body {
         text-align: center;
         display: flex;
-        flex-direction: row;
+        flex-wrap: wrap;
+      }
+      .pagination {
+        margin-left: 40px;
+      }
+      .pagination a {
+        display: none;
+      }
+      .pagination:hover {
+        cursor: pointer;
+        background-color: wheat;
+      }
+      .pagination:hover a {
+        display: grid;
+        margin-top: 10px;
+      }
+      .pagination a:hover {
+        background-color: tomato;
       }
       span {
         margin-left: 20px;
+        height: 300px;
       }
       nav {
         margin-left: 30px;
@@ -66,6 +84,7 @@
         width: 100px;
         text-align: center;
         margin-left: 10px;
+        cursor: pointer;
       }
       table tr td {
         display: none;
@@ -85,7 +104,7 @@
         var url;
         if (select == "깃헙") {
           url = "https://github.com/YeoJiSu";
-        } else if (select == "공부") {
+        } else if (select == "티스토리") {
           url = "https://study-with-jisu.tistory.com";
         } else {
           url = "https://www.youtube.com";
@@ -95,6 +114,17 @@
     </script>
   </head>
   <body>
+    <span>
+      <h1>&lt; pagination &gt;</h1>
+      <div class="pagination">
+        menu
+        <a href="#">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">5</a>
+      </div>
+    </span>
     <span>
       <h1>&lt; nav, ul ,li &gt;</h1>
       <nav>
@@ -122,7 +152,7 @@
       <h1>&lt; Select BOX &gt;</h1>
       <select onchange="select_menu(this.value)">
         <option value="깃헙">깃헙</option>
-        <option selected value="공부">공부</option>
+        <option selected value="티스토리">티스토리</option>
         <option value="유튜브">유튜브</option>
         <option value="깃헙">깃헙</option>
       </select>
@@ -140,21 +170,24 @@
       <h1>&lt; table &gt;</h1>
       <table>
         <th>Menu</th>
+        <!-- event 추가하는 여러가지 방법들 -->
         <tr
-          style="cursor: pointer"
           onClick=" location.href='https://github.com/YeoJiSu'"
           onMouseOver=" window.status = 'https://github.com/YeoJiSu' "
           onMouseOut=" window.status = '' "
         >
           <td>깃헙</td>
         </tr>
-        <tr>
+        <tr onclick="select_menu('티스토리')">
           <td>티스토리</td>
         </tr>
         <tr>
-          <td>유튜브</td>
+          <td onclick="select_menu('유튜브')">유튜브</td>
         </tr>
       </table>
+    </span>
+    <span>
+      <h1>&lt; &gt;</h1>
     </span>
   </body>
 </html>
