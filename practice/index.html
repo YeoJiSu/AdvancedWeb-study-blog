@@ -13,6 +13,7 @@
         margin-left: 20px;
       }
       nav {
+        margin-left: 30px;
         text-align: center;
         width: 100px;
       }
@@ -37,6 +38,16 @@
       }
       select {
         width: 200px;
+      }
+      div {
+        margin-left: 10px;
+        width: 100px;
+      }
+      div p a {
+        display: none;
+      }
+      div:hover p a {
+        display: block;
       }
     </style>
     <script>
@@ -85,6 +96,15 @@
         <option value="유튜브">유튜브</option>
         <option value="깃헙">깃헙</option>
       </select>
+    </span>
+    <span>
+      <h1>&lt; div, p &gt;</h1>
+      <div>
+        my MENU
+        <p><a href="https://github.com/YeoJiSu">깃헙</a></p>
+        <p><a href="https://study-with-jisu.tistory.com">티스토리</a></p>
+        <p><a href="https://plato.pusan.ac.kr">플라토</a></p>
+      </div>
     </span>
   </body>
 </html>
