@@ -62,6 +62,24 @@
         background-color: aqua;
         cursor: pointer;
       }
+      table {
+        width: 100px;
+        text-align: center;
+        margin-left: 10px;
+      }
+      table tr td {
+        display: none;
+      }
+      table:hover tr td {
+        display: block;
+        /* display: none; */
+      }
+      table tr:first-child :hover {
+        background-color: tomato;
+      }
+      table tr:nth-child(n + 2) :hover {
+        background-color: violet;
+      }
     </style>
     <script>
       function select_menu(select) {
@@ -121,6 +139,23 @@
     </span>
     <span>
       <h1>&lt; table &gt;</h1>
+      <table>
+        <th>Menu</th>
+        <tr
+          style="cursor: pointer"
+          onClick=" location.href='https://github.com/YeoJiSu'"
+          onMouseOver=" window.status = 'https://github.com/YeoJiSu' "
+          onMouseOut=" window.status = '' "
+        >
+          <td>깃헙</td>
+        </tr>
+        <tr>
+          <td>티스토리</td>
+        </tr>
+        <tr>
+          <td>유튜브</td>
+        </tr>
+      </table>
     </span>
   </body>
 </html>
