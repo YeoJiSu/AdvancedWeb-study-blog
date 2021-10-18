@@ -20,6 +20,9 @@
       nav ul {
         display: none;
       }
+      nav:hover {
+        cursor: pointer;
+      }
       nav:hover ul {
         display: block;
         margin: 0;
@@ -31,6 +34,7 @@
       }
       nav ul li:hover {
         background-color: yellowgreen;
+        cursor: pointer;
       }
       a {
         text-decoration: none;
@@ -48,6 +52,15 @@
       }
       div:hover p a {
         display: block;
+      }
+      div:hover p:first-child {
+        background-color: pink;
+        cursor: pointer;
+      }
+
+      div p a:hover {
+        background-color: aqua;
+        cursor: pointer;
       }
     </style>
     <script>
@@ -100,11 +113,14 @@
     <span>
       <h1>&lt; div, p &gt;</h1>
       <div>
-        my MENU
+        <p>my MENU</p>
         <p><a href="https://github.com/YeoJiSu">깃헙</a></p>
         <p><a href="https://study-with-jisu.tistory.com">티스토리</a></p>
         <p><a href="https://plato.pusan.ac.kr">플라토</a></p>
       </div>
+    </span>
+    <span>
+      <h1>&lt; table &gt;</h1>
     </span>
   </body>
 </html>
