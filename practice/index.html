@@ -39,6 +39,19 @@
         width: 200px;
       }
     </style>
+    <script>
+      function select_menu(select) {
+        var url;
+        if (select == "깃헙") {
+          url = "https://github.com/YeoJiSu";
+        } else if (select == "공부") {
+          url = "https://study-with-jisu.tistory.com";
+        } else {
+          url = "https://www.youtube.com";
+        }
+        document.location.href = url;
+      }
+    </script>
   </head>
   <body>
     <span>
@@ -50,26 +63,27 @@
             <a href="https://www.naver.com/">HOME</a>
           </li>
           <li>
-            <a href="https://www.naver.com/">NEWS</a>
+            <a href="https://github.com/YeoJiSu">깃헙</a>
           </li>
           <li>
-            <a href="https://www.naver.com/">ARTICLE</a>
+            <a href="https://study-with-jisu.tistory.com">티스토리</a>
           </li>
           <li>
-            <a href="https://www.naver.com/">BLOG</a>
+            <a href="https://plato.pusan.ac.kr">플라토</a>
           </li>
           <li>
-            <a href="https://www.naver.com/">MAP</a>
+            <a href="https://www.youtube.com">유튜브</a>
           </li>
         </ul>
       </nav>
     </span>
     <span>
       <h1>&lt; Select BOX &gt;</h1>
-      <select>
-        <option>1</option>
-        <option selected>2</option>
-        <option>3</option>
+      <select onchange="select_menu(this.value)">
+        <option value="깃헙">깃헙</option>
+        <option selected value="공부">공부</option>
+        <option value="유튜브">유튜브</option>
+        <option value="깃헙">깃헙</option>
       </select>
     </span>
   </body>
