@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+      <html>
+        <head>
+          <meta charset="utf-8" />
+          <title>1_3</title>
+        </head>
+        <style>
+      
+        </style>
+        <script>
+            var chk1;
+            var chk2;
+            var chk3;
+            var chk4;
+            var chk5;
+            var chk6;
+            const url1="https://cse.pusan.ac.kr/cse/index.do";
+            //정보컴퓨터 공학부
+            const url2="https://nursing.pusan.ac.kr/nursing/index.do";
+            //간호대학
+            const url3="https://medicine.pusan.ac.kr/medicine/index.do";
+            //의과대학 
+            const url4="https://bce.pusan.ac.kr/bce/index.do";
+            // 정보 의생명 융합부 
+            const url5="https://www.pusan.ac.kr/kor/CMS/Contents/Contents.do?mCode=MN006";
+            //고분자 공학과 
+            const url6="https://urban.pusan.ac.kr/urban/index.do";
+            // 도시공학과 
+   
+            function CheckForm(Join) {
+                chk1= document.frmJoin.pnu1.checked;
+                chk2= document.frmJoin.pnu2.checked;
+                chk3= document.frmJoin.pnu3.checked;
+                chk4= document.frmJoin.pnu4.checked;
+                chk5= document.frmJoin.pnu5.checked;
+                chk6= document.frmJoin.pnu6.checked;
+                
+                if (chk1 == true) {
+                    alert("do");
+                    const newDiv = document.createElement('div');
+                    newDiv.innerHTML="<h1><a href="+url1+">정컴</a></h1>";
+                    document.body.appendChild(newDiv);
+                };
+                if (chk2 == true) {
+                    alert("do");
+                    const newDiv = document.createElement('div');
+                    newDiv.innerHTML="<h1><a href="+url2+">간호</a></h1>";
+                    document.body.appendChild(newDiv);
+                };
+                if (chk3 == true) {
+                    alert("do");
+                    const newDiv = document.createElement('div');
+                    newDiv.innerHTML="<h1><a href="+url3+">의과</a></h1>";
+                    document.body.appendChild(newDiv);
+                };
+                if (chk4 == true) {
+                    alert("do");
+                    const newDiv = document.createElement('div');
+                    newDiv.innerHTML="<h1><a href="+url4+">의생</a></h1>";
+                    document.body.appendChild(newDiv);
+                };
+                if (chk5 == true) {
+                    alert("do");
+                    const newDiv = document.createElement('div');
+                    newDiv.innerHTML="<h1><a href="+url5+">고분자</a></h1>";
+                    document.body.appendChild(newDiv);
+                };
+                if (chk6 == true) {
+                    alert("do");
+                    const newDiv = document.createElement('div');
+                    newDiv.innerHTML="<h1><a href="+url6+">도시공</a></h1>";
+                    document.body.appendChild(newDiv);
+                };
+                
+            }
+       
+
+            function createDiv() {
+                // 1. <div> element 만들기
+                const newDiv = document.createElement('div');
+          
+                newDiv.innerHTML="<form name='frmJoin' action='' onSubmit='return CheckForm(this)'>"+
+                "<p>선택하시오</p>"+
+                "<label><input type='checkbox' name='pnu1' id='1' value='1'> 정보컴퓨터 공학부</label>"+
+                "<label><input type='checkbox' name='pnu2' id='2' value='2'> 간호대학</label>"+
+                "<label><input type='checkbox' name='pnu3' id='3' value='3'> 의과대학</label>"+
+                "<label><input type='checkbox' name='pnu4' id='4' value='4'> 정보 의생명 융합부 </label>"+
+                "<label><input type='checkbox' name='pnu5' id='5' value='5'> 고분자 공학과 </label>"+
+                "<label><input type='checkbox' name='pnu6' id='6' value='6'> 도시공학과</label>"+
+                "<p><input type='submit' value='Submit'></p>"+
+                "</form>";
+             
+                document.body.appendChild(newDiv);
+            } 
+        </script>
+        <body>
+            <button onclick="createDiv()">select 보이기</button>
+            <div id ="do"></div>
+        </body>
+
+
+    </html>
+  </body>
+</html>
