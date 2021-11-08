@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>URL 6개 초과</title>
+    <style>
+        body a {
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div><a href="https://www.tmon.co.kr/">티몬</a></div>
+    <div><a href="https://dict.naver.com/">사전</a></div>
+    <div><a href="http://www.hopohrs.com/">호포승마스쿨</a></div>
+    <div><a href="https://www.gmarket.co.kr/">G마켓</a></div>
+    <div><a href="https://www.kakaocorp.com/page/">카카오</a></div>
+    <div>
+        <a href="https://www.coupang.com/?src=1042016&spec=10304903&addtag=900&ctag=HOME&lptag=%EC%BF%A0%ED%8C%A1&itime=20211106214130&pageType=HOME&pageValue=HOME&wPcid=26372314246010586446713&wRef=www.google.com&wTime=20211106214130&redirect=landing&gclid=EAIaIQobChMI1572oOGD9AIVz1VgCh1VNQj5EAAYASAAEgIFE_D_BwE">쿠팡</a
+      >
+    </div>
+    <div><a href="https://www.pusan.ac.kr/kor/Main.do">부산대</a></div>
+    <div><a href="https://comic.naver.com/index">만화</a></div>
+    <div>
+        <a href="https://www.tving.com/main.do?retRef=Y&source=https://www.google.com/">티빙</a
+      >
+    </div>
+    <div>
+      <a
+        href="https://section.blog.naver.com/BlogHome.naver?directoryNo=0&currentPage=1&groupId=0"
+        >블로그</a
+      >
+    </div>
+    <div>
+      <a href="https://www.snu.ac.kr/">서울대</a>
+    </div>
+    <div>
+        <a href="http://www.dhu.ac.kr/pages/index.htm">대구한의대</a>
+    </div>
+</body>
+<script>
+    let l = document.links;
+    console.log(l.length);
+    for (i = 10; i < 10 + l.length; i++) {
+        localStorage.setItem(i, l[i - 10]);
+    }
+</script>
+
+</html>
