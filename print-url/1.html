@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>URL 6개 이하</title>
+    <style>
+        body a {
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+
+    <!-- script to count links -->
+</head>
+
+<body>
+    <div>
+        <a href="https://cse.pusan.ac.kr/cse/index.do">정보컴퓨터공학부</a>
+    </div>
+    <div>
+        <a href="https://bce.pusan.ac.kr/bce/index.do">의생명융합공학부</a>
+    </div>
+    <div>
+        <a href="https://medicine.pusan.ac.kr/medicine/index.do">의과대학</a>
+    </div>
+    <div>
+        <a href="https://pharmacy.pusan.ac.kr/pharmacy/index.do">약학대학</a>
+    </div>
+    <div>
+        <a href="https://edu.pusan.ac.kr/edu/index.do">사범대</a>
+    </div>
+</body>
+<script>
+    let l = document.links;
+    for (i = 0; i < l.length; i++) {
+        localStorage.setItem(i, l[i]);
+    }
+</script>
+
+</html>
