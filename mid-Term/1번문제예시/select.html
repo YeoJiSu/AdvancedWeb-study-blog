@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>select</title>
+    <link rel = "stylesheet" type = "text/css" href = "select.css">
+    <script src="select.js"></script>
+</head>
+<body>
+    <p>Select Menu</p>
+  <nav id="select_menu" for="Menu">Menu
+    <select name="Menu" onchange="if(this.value) window.location.href = this.value" size="4">
+      <option value="https://ibe.pusan.ac.kr/ibe/index.do">정보의생명공학대학</option>
+      <option value="https://cse.pusan.ac.kr/cse/index.do">정보컴퓨터공학부</option>
+      <option value="https://bce.pusan.ac.kr/bce/index.do">의생명융합공학부</option>
+    </select>
+  </nav>
+
+  <p>ul li Menu</p>
+  <nav id="li_menu">Menu
+    <ul>
+      <li><a href="https://ibe.pusan.ac.kr/ibe/index.do">정보의생명공학대학</a></li>
+      <li><a href="https://cse.pusan.ac.kr/cse/index.do">정보컴퓨터공학부</a></li>
+      <li><a href="https://bce.pusan.ac.kr/bce/index.do">의생명융합공학부</a></li>
+    </ul>
+  </nav>
+  
+  <p>flexbox Menu</p>
+  <nav id="flex_menu">Menu
+    <div class="flex-container">
+      <div><a href="https://ibe.pusan.ac.kr/ibe/index.do">정보의생명공학대학</a></div>
+      <div><a href="https://cse.pusan.ac.kr/cse/index.do">정보컴퓨터공학부</a></div>
+      <div><a href="https://bce.pusan.ac.kr/bce/index.do">의생명융합공학부</a></div>
+    </div>
+  </nav>
+
+  <table id="table_menu">
+    <thead>
+      <tr>
+        <th>table Menu</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a href="https://ibe.pusan.ac.kr/ibe/index.do">정보의생명공학대학</a></td>
+      </tr>
+      <tr>
+        <td><a href="https://cse.pusan.ac.kr/cse/index.do">정보컴퓨터공학부</td>
+      </tr>
+      <tr>
+        <td><a href="https://bce.pusan.ac.kr/bce/index.do">의생명융합공학부</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <hr>
+
+  <nav id="web_menu">Menu
+    <ul id="web_ul">
+    </ul>
+  </nav>
+
+  <div id="web_kind"> 학과 선택창
+
+  </div>
+  
+
+</body>
+</html>

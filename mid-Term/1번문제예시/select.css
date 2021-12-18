@@ -1,0 +1,162 @@
+    /*select css*/
+    select{
+        display: none;
+      }
+  
+      #select_menu{
+        width: 200px;
+        text-align: center;
+        font-weight: bold;
+        color: white;
+        background-color: burlywood;
+        border: 2px solid burlywood;
+      }
+      #select_menu:hover select{
+        width: 200px;
+        display: block;
+        background-color: white;
+        border: 1px solid burlywood;
+      }
+  
+      option:hover{
+        background-color: cornsilk;
+      }
+  
+      /*ul li css*/
+      #li_menu{
+        width: 200px;
+        text-align: center;
+        font-weight: bold;
+        color: white;
+        background-color: deepskyblue;
+        border: 2px solid deepskyblue;
+      }
+  
+      nav ul{
+        display: none;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      #li_menu:hover ul{
+        display: block;
+      }
+  
+      #li_menu ul li{
+        font-weight: normal;
+        background-color: white;
+        border-top: 2px solid deepskyblue;
+      }
+  
+      #li_menu ul li:hover{
+        background-color: rgb(207, 245, 255);
+      }
+      a{
+        color: black;
+        text-decoration: none;
+      }
+  
+      /*flexbox css*/
+      #flex_menu{
+        text-align: center;
+        font-weight: bold;
+        color: white;
+        background-color: darkcyan;
+        border: 4px solid darkcyan;
+      }
+      .flex-container{
+        display: flex;
+        justify-content: center;
+        background-color:darkcyan;
+      }
+      .flex-container > div{
+        display: none;
+      }
+      #flex_menu:hover .flex-container > div{
+        display: block;
+        text-align: center;
+        width: 200px;
+        margin: 10px;
+        padding: 20px 50px;
+        background-color: white;
+        border: 2px solid darkcyan;
+      }
+      #flex_menu:hover .flex-container > div:hover{
+        background-color: azure;
+      }
+  
+      /*table css*/
+      #table_menu{
+        width: 200px;
+        text-align: center;
+        font-weight: bold;
+        color: white;
+        background-color: darksalmon;
+        border: 2px solid darksalmon;
+      }
+      tr{
+        width:200px;
+      }
+      #table_menu tbody tr{
+        display: none;
+        margin: 0;
+        padding: 0;
+      }
+      td{
+        display: block;
+        width: 200px;
+        text-align: center;
+      }
+      #table_menu tbody tr{
+        display: block;
+        width: 200px;
+        background-color: white;
+        border-top: 2px solid darksalmon;
+        font-weight: normal; 
+        text-align: center;
+      }
+      #table_menu:hover tbody > tr:hover{
+        background-color: bisque;
+      }
+
+      /* web selcetion */
+      #web_ul{
+          display: block;
+      }
+
+      #web_menu{
+        width: 200px;
+        text-align: center;
+        font-weight: bold;
+        color: white;
+        background-color: deepskyblue;
+        border: 2px solid deepskyblue;
+      }
+
+      #web_menu:hover ul{
+        display: block;
+      }
+  
+      #web_menu ul li{
+        font-weight: normal;
+        background-color: white;
+        border-top: 2px solid deepskyblue;
+      }
+  
+      #web_menu ul li:hover{
+        background-color: rgb(207, 245, 255);
+      }
+
+      #web_kind{
+        width: 200px;
+        text-align: center;
+        font-weight: bold;
+      }
+
+      #web_kind li{
+        list-style: none;
+        font-weight: normal;
+        color: black;
+        background-color: white;
+        border: 2px solid darkblue;
+      }

@@ -1,0 +1,146 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+   <title>2-1</title>
+   <style>
+      p { margin: 0px; }
+      #welcomeMessage { margin-bottom: 10px; font-weight: bold; }
+      input[type = "text"] { width: 250px; }
+
+      span { margin-left: 10px; display: inline-block; width: 100px; }
+      li { list-style-type: none; width: 220px;}
+      li:first-child { border-top: 1px solid grey; }
+      li:nth-child(even) { background-color: lightyellow;
+         border-bottom: 1px solid grey; }
+      li:nth-child(odd) { background-color: lightblue; 
+         border-bottom: 1px solid grey; }
+      .page {display : flex;}
+      span > a:hover {color : red;}
+
+   </style>
+   
+</head>
+<body>
+
+   <div class = "page">
+      <div>
+         <h1>Homepage monitoring</h1>
+         <p id = "welcomeMessage"></p>
+         <form action = "#">
+            <p><input id = "query" type = "text" placeholder = "Enter Google search query">
+               <a href = "https://www.google.com/search?q=">
+                  Google search operators</a></p>
+            <p><input id = "tag" type = "text" placeholder = "Tag your query">
+               <input type = "button" value = "Save" id = "saveButton">
+               <input type = "button" value = "Clear All Saved Searches" id = "clearButton"></p>
+         </form>
+         <h1>Previously Tagged Searches</h1>
+         <div id = "searches"></div>
+      </div>
+      <div>
+         <iframe id="big_screen" src = "" width="700px" height = "500px" style="visibility:hidden;"></iframe>
+      </div>
+   </div>
+   <script>
+      
+      var tags; 
+
+      
+      function loadSearches() 
+      {
+         if ( !window.sessionStorage.getItem( "herePreviously" ) )//window 는 전역객체
+         {
+            sessionStorage.setItem( "herePreviously", "true" );
+            document.getElementById( "welcomeMessage" ).innerHTML = "Welcome to the Favorite Google Searches App";
+         } 
+
+         // 가나다순으로 정렬하기 위함
+
+         var length = localStorage.length; 
+         tags = []; 
+
+         
+         for (var i = 0; i < length; ++i) 
+         {
+            tags[i] = localStorage.key(i);
+         } 
+
+         tags.sort(); 
+
+         var markup = "<ul>";  // 아예 html 코드를 넘겨줌 !!!
+   
+         
+         for (var tag in tags) 
+         {
+            //query : value (url)
+            var query = localStorage.getItem(tags[tag]);// tags[tag]는 key 값이다 !!! , key 값으로 value 불러오기
+            markup +="<li><span><a id = '" + tags[tag] + "' onclick = 'bigScreen(id)' >" + tags[tag] + "</a></span>"  
+                       + "<input id = '" + tags[tag] + "' type = 'button' value = 'Edit' onclick = 'editTag(id)'>" 
+                       + "<input id = '" + tags[tag] + "' type = 'button' value = 'Delete' onclick = 'deleteTag(id)'>";
+         } 
+
+         markup += "</ul>";
+         document.getElementById("searches").innerHTML = markup;
+      } //end loadSearches()
+
+      function bigScreen(tag) // 목록 onclick -> 오른쪽 iframe 화면에 뜸
+      {
+         var url = localStorage.getItem(tag)
+         var screen = document.getElementById('big_screen');
+         screen.setAttribute('src',url);
+         screen.setAttribute('style','visibility:visible;');
+      }
+
+      
+      function clearAllSearches() //localStorage 저장소 비워줌 + iframe 화면 다시 hidden 으로
+      {
+         var screen = document.getElementById('big_screen');
+         screen.setAttribute('style','visibility:hidden;');
+         
+         localStorage.clear();
+         loadSearches(); 
+      } 
+
+      function saveSearch() //Save 버튼 -> "key : tag & value : 주소" localstorage 저장
+      {
+         var query = document.getElementById("query");
+         var tag = document.getElementById("tag");
+         localStorage.setItem(tag.value, query.value); 
+         tag.value = ""; 
+         query.value = ""; //이것을 해줘야 save 버튼 클릭한뒤 입력칸이 다시 원상태로 돌아옴
+         loadSearches(); 
+      } 
+
+      function deleteTag( tag ) // delete -> 오른쪽 iframe 화면 , localstroage 저장소 , 목록에서 없어져야 함(이건 loadsearches 정렬이 해줌)
+      {
+         var bs = document.getElementById('big_screen')
+         var url = bs.getAttribute('src');
+         var bbb = localStorage.getItem(tag);
+         if(url == bbb){
+            bs.setAttribute('style','visibility:hidden;');
+         }
+
+         localStorage.removeItem( tag );
+         loadSearches(); 
+      } 
+
+      function editTag( tag ) 
+      {
+         document.getElementById("query").value = localStorage[ tag ];
+         document.getElementById("tag").value = tag;   
+         loadSearches(); 
+      } 
+
+      function start()
+      {
+         var saveButton = document.getElementById( "saveButton" );
+         saveButton.addEventListener( "click", saveSearch, false );
+         var clearButton = document.getElementById( "clearButton" );
+         clearButton.addEventListener( "click", clearAllSearches, false );
+         loadSearches(); 
+      } 
+      window.addEventListener( "load", start, false );
+
+   </script>
+</body>
+</html>

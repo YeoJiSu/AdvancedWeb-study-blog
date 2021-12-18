@@ -1,0 +1,282 @@
+﻿
+<!-- Save, Edit , Delte 시 화면 변화줌 -->
+
+<!DOCTYPE html>
+<html>
+<head>
+   <title>iframe+구글</title>
+   <style>
+      p { margin: 0px; }
+      #welcomeMessage { margin-bottom: 10px; font-weight: bold; }
+      input[type = "text"] { width: 250px; }
+
+      span { margin-left: 10px; display: inline-block; width: 100px; }
+      li { list-style-type: none; width: 220px;}
+      li:first-child { border-top: 1px solid grey; }
+      li:nth-child(even) { background-color: lightyellow;
+         border-bottom: 1px solid grey; }
+      li:nth-child(odd) { background-color: lightblue; 
+         border-bottom: 1px solid grey; }
+      .page {display : flex;}
+      span > a:hover {color : red;}
+
+      .small_set		{display: flex;
+				flex-wrap: wrap;}
+		.small		{width: 150px;
+				height: 100px;
+				border: 2px solid black;
+				magin: 10px;}
+		.cell		{width: 160px;
+				float: left;}
+
+   </style>
+   
+</head>
+<body>
+
+   <div class = "page">
+      <div>
+         <h1>Favorite Google Searches</h1>
+         <p id = "welcomeMessage"></p>
+         <form action = "#">
+            <p><input id = "query" type = "text" placeholder = "Enter Google search query">
+               <a href = "https://www.google.com/search?q=">
+                  Google search operators</a></p>
+            <p><input id = "tag" type = "text" placeholder = "Tag your query">
+               <input type = "button" value = "Save" id = "saveButton">
+               <input type = "button" value = "Clear All Saved Searches" id = "clearButton">
+               <input type = "button" value = "Change" id = "changeButton"></p>
+         </form>
+         <h1>Previously Tagged Searches</h1>
+         <div id = "searches"></div>
+      </div>
+         <div class="cell">
+                  <iframe class="small" src="" id="s1"></iframe>
+         </div>
+         <div class="cell">
+                  <iframe class="small" src="" id="s2"></iframe>
+         </div>
+         <div class="cell">
+                  <iframe class="small" src="" id="s3"></iframe>
+         </div>
+         <div class="cell">
+                  <iframe class="small" src="" id="s4"></iframe>
+         </div>
+         <div class="cell">
+                  <iframe class="small" src="" id="s5"></iframe>
+         </div>
+         <div class="cell">
+                  <iframe class="small" src="" id="s6"></iframe>
+         </div>
+         <div class="cell">
+                  <iframe class="small" src="" id="s7"></iframe>
+         </div>
+         <div class="cell">
+                  <iframe class="small" src="" id="s8"></iframe>
+         </div>
+         <div class="cell">
+                  <iframe class="small" src="" id="s9"></iframe>
+         </div>
+         <div class="cell">
+                  <iframe class="small" src="" id="s10"></iframe>
+         </div>
+      <div>
+         <iframe id="big_screen" src = "" width="700px" height = "500px" style="visibility:hidden;"></iframe>
+      </div>
+   </div>
+   <script>
+      console.log(2)
+      var tags; 
+
+      var prevtime = [0,0,0,0,0,0,0,0,0,0]
+
+      var path = "file:///C:/Users/JM%20shin/Desktop/cookies/"
+      var url=""
+      var hlist=["h1","h2","h3","h4","h5","h6","h7","h8","h9","h10"]
+
+      var s1 =document.getElementById("s1");
+		var s2 =document.getElementById("s2");
+		var s3 =document.getElementById("s3");
+		var s4 =document.getElementById("s4");
+		var s5 =document.getElementById("s5");
+		var s6 =document.getElementById("s6");
+		var s7 =document.getElementById("s7");
+		var s8 =document.getElementById("s8");
+      var s9 =document.getElementById("s9");    
+      var s10 =document.getElementById("s10");
+
+      var s = [s1, s2, s3, s4, s5, s6, s7, s8, s9, s10];
+
+      for (var i =0;i<10;++i){
+         prevtime[i]=localStorage.getItem(hlist[i])
+
+      }
+
+
+
+
+
+      function clock() {
+
+         for (var j =0;j<10;++j){
+            s[j].setAttribute('src','');
+
+         }
+
+
+         for (var i = 0; i < 10; ++i) {
+            var sectime=localStorage.getItem(hlist[i]) //webstorage에 저장된 수정 시간 받아오는 것
+            console.log(sectime)
+            url = path+hlist[i]+".html"
+            if(prevtime[i] != sectime){ //이전에 받아왔던 수정시간과 다를시               
+               s[i].setAttribute('src',url); //각 iframe에 띄움               
+               console.log(s[i].src)
+               //console.log(url);
+               prevtime[i]=sectime;
+            }
+            else if (prevtime[i] == sectime){ //이전에 받아왔던 수정시간과 같을시
+               s[i].setAttribute('src',''); //각 iframe에 아무것도 안띄움
+               //console.log(s[i].src)
+               prevtime[i]=sectime;
+               console.log("h1X") //hidden하는걸로 바꾸기, 삭제하는걸로 하기
+            }
+   
+         }/*
+         for (var i =0;i<10;++i){
+            s[i].setAttribute('src','');
+
+         }*/
+         
+         //var sectime=localStorage.getItem('h1')
+
+         
+      }
+
+      function init() {
+
+      clock();
+
+      // 최초에 함수를 한번 실행시켜주고 
+      setInterval(clock, 5000);
+
+      // setInterval이라는 함수로 매초마다 실행을 해줍니다.
+
+      // setInterval은 첫번째 파라메터는 함수이고 두번째는 시간인데 밀리초단위로 받습니다. 1000 = 1초 
+
+      }
+
+      
+      function loadSearches() 
+      {
+         if ( !window.sessionStorage.getItem( "herePreviously" ) )//window 는 전역객체
+         {
+            sessionStorage.setItem( "herePreviously", "true" );
+            document.getElementById( "welcomeMessage" ).innerHTML = "Welcome to the Favorite Google Searches App";
+         } 
+
+         // 가나다순으로 정렬하기 위함
+
+         var length = localStorage.length; 
+         tags = []; 
+
+         
+         for (var i = 0; i < length; ++i) 
+         {
+            tags[i] = localStorage.key(i);
+         } 
+
+         tags.sort(); 
+
+         var markup = "<ul>";  // 아예 html 코드를 넘겨줌 !!!
+   
+         
+         for (var tag in tags) 
+         {
+            //query : value (url)
+            var query = localStorage.getItem(tags[tag]);// tags[tag]는 key 값이다 !!! , key 값으로 value 불러오기
+            markup +="<li><span><a id = '" + tags[tag] + "' onclick = 'bigScreen(id)' >" + tags[tag] + "</a></span>"  
+                       + "<input id = '" + tags[tag] + "' type = 'button' value = 'Edit' onclick = 'editTag(id)'>" 
+                       + "<input id = '" + tags[tag] + "' type = 'button' value = 'Delete' onclick = 'deleteTag(id)'>";
+         } 
+
+         markup += "</ul>";
+         document.getElementById("searches").innerHTML = markup;
+      } //end loadSearches()
+
+      function bigScreen(tag) // 목록 onclick -> 오른쪽 iframe 화면에 뜸
+      {
+         var url = localStorage.getItem(tag)
+         var screen = document.getElementById('big_screen');
+         screen.setAttribute('src',url);
+         screen.setAttribute('style','visibility:visible;');
+      }
+
+      
+      function clearAllSearches() //localStorage 저장소 비워줌 + iframe 화면 다시 hidden 으로
+      {
+         var screen = document.getElementById('big_screen');
+         screen.setAttribute('style','visibility:hidden;');
+         
+         localStorage.clear();
+         loadSearches(); 
+      } 
+
+      function saveSearch() //Save 버튼 -> "key : tag & value : 주소" localstorage 저장
+      {
+         var query = document.getElementById("query");
+         var tag = document.getElementById("tag");
+         localStorage.setItem(tag.value, query.value); 
+
+         var url = localStorage.getItem(tag.value);
+         var screen = document.getElementById('big_screen');
+         screen.setAttribute('src',url);
+         screen.setAttribute('style','visibility:visible;');
+
+         tag.value = ""; 
+         query.value = "";
+
+         loadSearches(); 
+      } 
+
+      function deleteTag( tag ) // delete -> 오른쪽 iframe 화면 , localstroage 저장소 , 목록에서 없어져야 함(이건 loadsearches 정렬이 해줌)
+      {
+         var bs = document.getElementById('big_screen')
+         var url = bs.getAttribute('src');
+         var bbb = localStorage.getItem(tag);
+         if(url == bbb){
+            bs.setAttribute('style','visibility:hidden;');
+         }
+
+         localStorage.removeItem( tag );
+         loadSearches(); 
+      } 
+
+      function editTag( tag ) 
+      {
+         document.getElementById("query").value = localStorage[ tag ];
+         document.getElementById("tag").value = tag;  
+
+         var url = localStorage.getItem(tag)
+         var screen = document.getElementById('big_screen');
+         screen.setAttribute('src',url);
+         screen.setAttribute('style','visibility:visible;');
+
+         loadSearches(); 
+      } 
+
+      function start()
+      {
+         var saveButton = document.getElementById( "saveButton" );
+         saveButton.addEventListener( "click", saveSearch, false );
+         var clearButton = document.getElementById( "clearButton" );
+         clearButton.addEventListener( "click", clearAllSearches, false );
+         loadSearches(); 
+      } 
+      window.addEventListener( "load", start, false );
+
+      
+      init()
+      console.log(1)
+   </script>
+</body>
+</html>
