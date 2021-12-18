@@ -1,0 +1,5 @@
+<!ELEMENT db (students*)>
+<!ELEMENT students (studentID,name,phonenum)>
+<!ELEMENT studentID (#PCDATA)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT phonenum (#PCDATA)>

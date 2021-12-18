@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>CCTV</title>
+  </head>
+  <style>
+    body {
+      width: 1400px;
+      margin: auto;
+      background-color: black;
+      color: white;
+    }
+    #total {
+      margin-left: 10px;
+      margin-top: 20px;
+    }
+    h1 {
+      text-align: left;
+    }
+    #cctv {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    #my_url {
+      background-color: black;
+      border-width: 1px;
+      border-color: white;
+      border-radius: 3px;
+      color: white;
+    }
+    #left {
+      float: right;
+      margin-left: 10px;
+    }
+    #center {
+    }
+    #All {
+      display: flex;
+      flex-wrap: wrap;
+      /* margin: auto; */
+
+      width: 600px;
+      height: 300px;
+      object-fit: fill;
+    }
+    #one #big {
+      margin-top: 4px;
+      padding-top: 0px;
+      /* margin-left: 550px; */
+      width: 770px;
+      height: 1000px;
+      border-color: black;
+    }
+    .blink {
+      animation: blinker 2s linear infinite;
+      width: 12px;
+      height: 12px;
+      display: inline-block;
+
+      border: 1px solid rgb(182, 0, 0);
+      background-color: rgb(182, 0, 0);
+      border-radius: 100%;
+      float: right;
+      margin: 0%;
+    }
+    #button {
+      border-color: black;
+      border-radius: 0%;
+
+      background-color: black;
+    }
+
+    @keyframes blinker {
+      50% {
+        opacity: 0;
+      }
+    }
+    nav {
+      text-align: center;
+      width: 100px;
+    }
+    nav:hover {
+      cursor: pointer;
+      padding-top: 10px;
+      background-color: rgba(255, 255, 255, 0.219);
+      color: black;
+    }
+    nav ul {
+      display: none;
+    }
+
+    nav:hover ul {
+      display: block;
+      margin: 0;
+      padding: 10px;
+      cursor: pointer;
+    }
+    nav ul li {
+      list-style: none;
+      padding: 10px;
+    }
+    nav ul li:hover {
+      background-color: white;
+    }
+    a {
+      text-decoration: none;
+      color: black;
+    }
+  </style>
+  <script>
+    var order = 1;
+    function printUrl() {
+      if (order == 9) alert("8개까지만 감시할 수 있습니다");
+      else {
+        var newDiv = document.createElement("div");
+        newDiv.innerHTML =
+          "<button id='button' onclick='viewBigger(" +
+          order +
+          ")''><iframe onmouseover='viewBigger(" +
+          order +
+          ")' id='" +
+          order +
+          "' src=''' style='width: 280px; height: 270px;'></iframe></button>";
+        var all = document.getElementById("All");
+        all.appendChild(newDiv);
+        const name = document.getElementById("my_url").value;
+        document.getElementById(String(order)).src = name;
+        order++;
+      }
+    }
+    var click;
+    function viewBigger(click) {
+      const name = document.getElementById(String(click)).src;
+      document.getElementById("big").src = name;
+    }
+  </script>
+  <body>
+    <div id="total">
+      <div>
+        <span id="center">
+          &nbsp;&nbsp;🔒 ADMIN &nbsp;&nbsp;&nbsp;&nbsp;Enter the homepage
+          address you want to monitor&nbsp;&nbsp;&nbsp;&nbsp;
+          <input
+            type="text"
+            id="my_url"
+            size="60"
+            onKeypress="javascript:if(event.keyCode==13) {printUrl()}"
+          />
+          <span id="left">
+            <nav>
+              CAM 4
+              <ul>
+                <li>
+                  <a href="#">CAM 1</a>
+                </li>
+                <li><a href="#">CAM 2</a></li>
+                <li>
+                  <a href="#">CAM 3</a>
+                </li>
+                <li>
+                  <a href="#">CAM 5</a>
+                </li>
+              </ul>
+            </nav>
+          </span>
+          <span class="blink"></span>
+        </span>
+        <div id="right"></div>
+      </div>
+      <div id="cctv">
+        <section id="All"></section>
+        <section id="one">
+          <iframe id="big" src=""></iframe>
+        </section>
+      </div>
+    </div>
+  </body>
+</html>

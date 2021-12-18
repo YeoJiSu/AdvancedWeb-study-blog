@@ -1,0 +1,19 @@
+<?xml version = '1.0'?>
+<!DOCTYPE db SYSTEM 'http://164.125.36.78/202055565/HW4/article.dtd'>
+<db>
+    <students>
+        <studentID>2020</studentID>
+        <name>지</name>
+        <phonenum>수</phonenum>
+    </students>
+    <students>
+        <studentID>202055565</studentID>
+        <name>wltn</name>
+        <phonenum>010-1111-2222</phonenum>
+    </students>
+    <students>
+        <studentID>학번</studentID>
+        <name>이름</name>
+        <phonenum>저나버노</phonenum>
+    </students>
+</db>
