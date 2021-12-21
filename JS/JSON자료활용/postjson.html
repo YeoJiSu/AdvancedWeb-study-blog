@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Send json data</title>
+    </head>
+    <body>
+        <script>
+            function submitdata(){
+                document.getElementById("myform").submit();
+            }
+            function hiddendata(){
+                var id =document.getElementById("studentID").value;
+                var nm = document.getElementById("name").value;
+                var pn = document.getElementById("phonenum").value;
+                var myj = document.getElementById("jsonstring");
+                const obj = {studentID: id, name: nm, phonenum:pn};
+                const myJSON = JSON.stringify(obj);
+                myj.value = myJSON;
+            }
+            function start(){ 
+                document.getElementById("studentID").addEventListener("change", function(){hiddendata()}, false);
+                document.getElementById("name").addEventListener("change", function(){hiddendata()}, false);
+                document.getElementById("phonenum").addEventListener("change", function(){hiddendata()}, false);
+                document.getElementById("btn").addEventListener("click", function(){submitdata()}, false);   
+            }
+            window.addEventListener("load", start, false);
+        </script>
+            <h2>Click post</h2>
+            <form id = "myform" method = "post" action = "./insertjson.php">
+                <div><label>StudentID</label>
+                    <input id = "studentID" type = "text" name = "studentID"></div>
+                <div><label>Name</label>
+                    <input id = "name" type = "text" name = "name"></div>
+                <div><label>phoneNum</label>
+                    <input id = "phonenum" type = "text" name = "phonenum"></div>
+                <input id = "jsonstring" type = "hidden" name = "jsonstring">    
+                <p><input id = "btn" type = "button" value = "Write json"></p>  
+            </form>
+    </body>
+</html>

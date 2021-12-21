@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE students [
+<!ELEMENT students (student+)>
+<!ELEMENT student (name,studentID,sex)>
+<!ATTLIST student num CDATA #REQUIRED>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT studentID (#PCDATA)>
+<!ELEMENT sex (#PCDATA)>
+]>

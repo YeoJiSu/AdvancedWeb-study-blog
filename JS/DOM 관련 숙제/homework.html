@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+        #screen {
+            width: 600px;
+            height: 600px;
+        }
+        
+        #links {
+            width: 620px;
+            height: 400px;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" id="input" />
+    <button id="btn" onclick="get_input()">확인</button>
+    <div id="screen"></div>
+    <div id="links"></div>
+
+    <script>
+        function get_input() {
+            var url = document.getElementById("input").value;
+            var screen = document.getElementById("screen");
+
+            var ifr = document.createElement("iframe");
+            ifr.setAttribute("src", url);
+            ifr.id = "ifr";
+            ifr.width = "98%";
+            ifr.height = "98%";
+            screen.appendChild(ifr);
+
+            get_links();
+        }
+
+        function get_links() {
+            var links_div = document.getElementById("links");
+            if (localStorage.length > 6) links_div.style.overflow = "scroll";
+            for (var i = 0; i < localStorage.length; i++) {
+                var link = localStorage.getItem(localStorage.key(i));
+                console.log(localStorage.length);
+
+                var ifr = document.createElement("iframe");
+                ifr.setAttribute("src", link);
+                ifr.setAttribute("width", "49%");
+                ifr.setAttribute("height", "20%");
+                links_div.appendChild(ifr);
+            }
+        }
+    </script>
+</body>
+
+</html>

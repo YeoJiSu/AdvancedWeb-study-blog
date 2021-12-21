@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE students
+SYSTEM "studentDTD.dtd">
+<students>
+	<student num="0">
+		<name>이름</name>
+		<studentID>학번</studentID>
+		<sex>male</sex>
+	</student>
+	<student num="1">
+		<name>홍길동</name>
+		<studentID>123456789</studentID>
+		<sex>남자</sex>
+	</student>
+	<student num="2">
+		<name>장금이</name>
+		<studentID>987654321</studentID>
+		<sex>여자</sex>
+	</student>
+</students>

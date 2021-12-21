@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>문서 1</title>
+</head>
+
+<body>
+    <h1>정보의생명공학대학</h1>
+    <a href="https://cse.pusan.ac.kr/cse/index.do">정보컴퓨터공학과</a>
+    <a href="https://bce.pusan.ac.kr/bce/index.do">의생명융합공학부</a>
+
+    <script>
+        localStorage.clear();
+        var links = document.links;
+        for (var i = 0; i < links.length; i++) {
+            localStorage.setItem("L" + i, links[i]);
+        }
+    </script>
+</body>
+
+</html>

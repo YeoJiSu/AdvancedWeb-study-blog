@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Send json data</title>
+    </head>
+    <body>
+        <script>
+            function storejson(){
+                var js = document.getElementById("jsonstring").value;
+                localStorage.setItem("student", js);
+            }
+            function hiddendata(){
+                var id =document.getElementById("studentID").value;
+                var nm = document.getElementById("name").value;
+                var pn = document.getElementById("phonenum").value;
+                var myj = document.getElementById("jsonstring");
+                const obj = {studentID: id, name: nm, phonenum:pn};
+                const myJSON = JSON.stringify(obj);
+                myj.value = myJSON;
+            }
+            function showall(){
+                var nowjs = localStorage.getItem("student");
+                var now = JSON.parse(nowjs);
+                document.getElementById("showjs").innerHTML = " StudentID : "+now.studentID+" Name : "+now.name+" PhoneNumber : "+now.phonenum+"\n";
+            }
+            function start(){ 
+                document.getElementById("studentID").addEventListener("change", function(){hiddendata()}, false);
+                document.getElementById("name").addEventListener("change", function(){hiddendata()}, false);
+                document.getElementById("phonenum").addEventListener("change", function(){hiddendata()}, false);
+                document.getElementById("btn").addEventListener("click", function(){storejson()}, false);
+                document.getElementById("btn2").addEventListener("click", function(){showall()}, false);   
+            }
+            window.addEventListener("load", start, false);
+        </script>
+        <h2>Click post</h2>
+        <form id = "myform" method = "post" action = "">
+            <div><label>StudentID</label>
+                <input id = "studentID" type = "text" name = "studentID"></div>
+            <div><label>Name</label>
+                <input id = "name" type = "text" name = "name"></div>
+            <div><label>phoneNum</label>
+                <input id = "phonenum" type = "text" name = "phonenum"></div>
+            <input id = "jsonstring" type = "hidden" name = "jsonstring">    
+            <p><input id = "btn" type = "button" value = "Store json"></p>
+            <p><input id = "btn2" type = "button" value = "Get json"></p>
+        </form>
+        <p id="showjs"></p>
+    </body>
+</html>

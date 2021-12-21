@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        .highlighted{
+            background: rgba(179, 121, 121, 0.5);
+        }
+    </style>
+    
+</head>
+<body id='body'>
+    <button onclick="process_first_child()">first child</button>
+    <button onclick="process_last_child()">last child</button>
+    
+    <button onclick="process_previous_sibling()">previous sibling</button>
+    <button onclick="process_next_sibling()">next sibling</button>
+
+    <button onclick="process_parent()">parent</button>
+    <div id='xmldata'></div>
+</body>
+
+<script>
+    var depth = -1;
+    var idCounter = 1;
+    outputHTML = "";
+    var current, previous;
+    function start(){
+
+        var req = new XMLHttpRequest();
+        req.open("get",'xmlData.xml',false);
+        req.send(null);
+        var doc = req.responseXML;
+        
+        buildHTML(doc.childNodes);
+        document.getElementById("xmldata").innerHTML = outputHTML;
+        current = document.getElementById("id1");
+        setCurrentNodeStyle(current.getAttribute("id"),true);
+    }
+    function buildHTML(node){
+        depth++;
+
+        for(var i=0;i<node.length;i++){
+            switch(node[i].nodeType){
+                case 1: // ELEMENT_NODE
+                    outputHTML += "<div id=\"id"+idCounter+"\">";
+                    spaceOutput(depth);
+                    outputHTML += node[i].nodeName;
+                    idCounter++;
+
+                    if(node[i].childNodes.length!=0)
+                        buildHTML(node[i].childNodes);
+                    outputHTML += "</div>";
+                    break;
+
+                case 3: // TEXT NODE
+                case 8: // COMMENT NODE
+                if(node[i].nodeValue.indexOf("\n")==-1 && node[i].nodeValue.indexOf("\t")==-1){
+                    outputHTML += "<div id=\"id"+idCounter+"\">";
+                    spaceOutput(depth);
+                    outputHTML += node[i].nodeValue;
+                    outputHTML += "</div>";
+                    idCounter++;
+                    break;
+                }    
+            }
+        }
+        depth--;
+    }
+    function spaceOutput(depth){
+        for(var i=0;i<depth;i++){
+            outputHTML += "&nbsp&nbsp&nbsp";
+        }
+    }
+    function setCurrentNodeStyle(id,highlight){
+        document.getElementById(id).className = 
+            (highlight ? "highlighted" : "");
+    }
+
+    function process_first_child(){
+        if(current.childNodes.length==1 && current.firstChild.nodeType==3){
+            alert("no child here");
+        }
+        else if(current.childNodes.length>1){
+            previous = current;
+            if(current.firstChild.nodeType != 3){
+                current = current.firstChild;
+            }
+            else{
+                current = current.firstChild.nextSibling;
+            }
+            setCurrentNodeStyle(previous.getAttribute("id"),false);
+            setCurrentNodeStyle(current.getAttribute("id"),true);
+        }
+    }
+    function process_last_child(){
+        if(current.childNodes.length==1 && current.firstChild.nodeType==3){
+            alert("no child here");
+        }
+        else if(current.childNodes.length!=0){
+            previous = current;
+            current = current.lastChild;
+            setCurrentNodeStyle(previous.getAttribute("id"),false);
+            setCurrentNodeStyle(current.getAttribute("id"),true);
+        }
+    }
+    function process_previous_sibling(){
+        if(current.getAttribute('id')!='xmldata' && current.previousSibling
+                                                 && current.previousSibling.nodeType!=3){
+            previous = current;
+            current = current.previousSibling;
+            setCurrentNodeStyle(previous.getAttribute("id"),false);
+            setCurrentNodeStyle(current.getAttribute("id"),true);
+        }
+    }
+    function process_next_sibling(){
+        if(current.getAttribute('id')!='xmldata' && current.nextSibling
+                                                 && current.nextSibling.nodeType!=3){
+            previous = current;
+            current = current.nextSibling;
+            setCurrentNodeStyle(previous.getAttribute("id"),false);
+            setCurrentNodeStyle(current.getAttribute("id"),true);
+        }
+    }
+    function process_parent(){
+        if(current.parentNode.getAttribute('id')!="xmldata"){
+            previous = current;
+            current = current.parentNode;
+            setCurrentNodeStyle(previous.getAttribute("id"),false);
+            setCurrentNodeStyle(current.getAttribute("id"),true);
+
+        }
+    }
+
+    window.addEventListener('load',start,false);
+</script>
+</html>
