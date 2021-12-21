@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <h1>공과대학</h1>
+   <button onclick =site()>불필요한 사이트 제거</button>
+   <form action="submit.php" method="post">
+    <button onclick=store()>저장</button>
+    <input id = "jsonstring" type = "hidden" name = "jsonstring">  
+</form> 
+    <form action="submit2.php" method= "post">
+        <button >xml로 저장</button>
+    </form>
+   
+   
+   <br>
+   <a id=1 href="https://me.pusan.ac.kr/new/main/index.asp">기계공학부</a>
+   <div id=11></div>
+   <br><br>
+   <a id=2 href="https://ee.pusan.ac.kr/ee/index.do">전자공학과</a>
+   <div id=12></div>
+   <br><br>
+   <a id=3 href="https://polymer.pusan.ac.kr/polymer/index.do">고분자공학과</a>
+   <div id=13></div>
+   <br><br>
+   <a id=4 href="https://naoe.pusan.ac.kr/naoe/index.do">조선해양공학과</a>
+   <div id=14></div>
+   <br><br>
+   <a id=5 href="https://aerospace.pusan.ac.kr/aerospace/index.do">항공우주공학과</a>
+   <div id=15></div>
+   <br><br>
+   <a id=6 href="https://eec.pusan.ac.kr/eehome/index.do">전기공학과</a>
+   <div id=16></div>
+   <br><br>
+   <a id=7 href="https://mse.pusan.ac.kr/mse/index.do">재료공학부</a>
+   <div id=17></div>
+   <br><br>
+
+    <script>
+
+       function site() {      
+           for (var i=1; i<=document.links.length+2; i++){
+               var index = 0;
+                var url = document.getElementById(i).href;
+                title = url.split("//")[1].split(".")[0];
+                if (title[0]=="e") {
+                    document.getElementById(i).removeAttribute('href');
+                }
+                else {
+                    document.getElementById(i+10).innerHTML ="이 문서의 제목은 " +title+"입니다."+" 이 문서는 "+i+"번째 문서 입니다. ";
+
+                }
+            }
+       }
+       function store() {
+           localStorage.clear();
+           for (var i=1; i<=document.links.length+2; i++){
+                var index = 0;
+                var url = document.getElementById(i).href;
+                if (url!=""){
+                    title = url.split("//")[1].split(".")[0];
+                    date = document.lastModified;
+                    index+=1;
+                    parent = document.location.href;
+                    describe = "이 문서의 제목은 " +title+"입니다."+" 이 문서는 "+i+"번째 문서 입니다. ";
+                    const obj = {url: url, date: date, title: title, describe:describe,parent:parent};
+                    const myJSON = JSON.stringify(obj);
+                    localStorage.setItem(index,myJSON);
+                    console.log(obj);
+                    var myj = document.getElementById("jsonstring");
+                    myj.value = myJSON;
+                }
+              
+           }
+        
+        }
+
+       
+
+        
+        
+	    
+        
+    </script>
+</body>
+</html>

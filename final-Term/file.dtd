@@ -1,0 +1,7 @@
+<!ELEMENT file (files*)>
+<!ELEMENT files (title,date,url,describe,parent)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT date (#PCDATA)>
+<!ELEMENT url (#PCDATA)>
+<!ELEMENT describe (#PCDATA)>
+<!ELEMENT parent (#PCDATA)>
