@@ -14,16 +14,30 @@
 ###### :bulb: Ajax
 
 # 📁 1. CSS를 활용한 프로그램
-- CSS pagination을 이용하여 select를 구현한다.
-- flex-box와 object-fit를 이용하여 그림 하나를 16개로 나누어 분리하고, 그림 사이에는 box가 쳐지게 한다.
+### 📌 설명
+CSS pagination을 이용하여 select를 구현한다.
+
+flex-box와 object-fit를 이용하여 그림 하나를 16개로 나누어 분리하고, 그림 사이에는 box가 쳐지게 한다.
+### 📌 결과 화면
+<img src = "1/img.png" width = "250" >
+
+<br><br>
 
 # 📁 2. 홈페이지 모니터링 시스템
+### 📌 설명
 iframe(HTML5)과 flex, pagination을 이용하여 홈페이지 감시 시스템을 만든다.
 - DOM의 명령어(예, setAttribite, event 등)을 활용한다.
 - 사용자가 모니터링할 페이지를 입력하면, 그 사이트의 내용이 조그맣게 나온다.
 - 등록하면 화면의 수는 늘어난다. (flex로 화면의 개수를 늘리기)
 - 단, 늘일 수 있는 화면의 개수는 일단 8개로 제한한다.
 - 그리고 화면의 반쯤에는 우리가 클릭한(또는 마우스오버한) 화면이 크게 나타난다.
+### 📌 결과 화면
+<img src = "2/img/1.png" width = "200" >
+<img src = "2/img/2.png" width = "200" >
+<img src = "2/img/3.png" width = "200" >
+
+<br><br>
+
 
 # 📁 3. DOM을 활용한 프로그램
 - 특정한 URL을 넣으면 그 사이트 내용이 화면에 크게 보이고,
