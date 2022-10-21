@@ -13,6 +13,7 @@ flex-box와 object-fit를 이용하여 그림 하나를 16개로 나누어 분�
 ### 📌 결과 화면
 <img src = "1/img.png" width = "400" >
 
+<br>
 
 # 📁 2. 홈페이지 모니터링 시스템
 ### 📌 설명
@@ -28,6 +29,7 @@ iframe(HTML5)과 flex, pagination을 이용하여 홈페이지 감시 시스템�
 <img src = "2/img/2.png" width = "300" align="left" >
 <img src = "2/img/3.png" width = "300" >
 
+<br><br>
 
 # 📁 3. DOM을 활용한 프로그램
 ### 📌 설명
@@ -39,6 +41,8 @@ iframe(HTML5)과 flex, pagination을 이용하여 홈페이지 감시 시스템�
 <img src = "3/img/1.png" width = "300" align="left">
 <img src = "3/img/2.png" width = "300" align="left">
 <img src = "3/img/3.png" width = "300" >
+
+<br><br>
 
 # 📁 4. PHP로 데이터베이스(mysql) 접근
 ### 📌 설명
@@ -59,6 +63,8 @@ iframe(HTML5)과 flex, pagination을 이용하여 홈페이지 감시 시스템�
 <img src = "5/img/2.png" width = "300" align="left">
 <img src = "5/img/4.png" width = "300" >
 
+<br><br>
+
 # 📁 6. JSON 자료 활용
 ### 📌 설명
 - JSON을 이용하여 서버에 자료를 보내고, 이를 다시 클라이언트에 저장한다.
@@ -73,6 +79,8 @@ iframe(HTML5)과 flex, pagination을 이용하여 홈페이지 감시 시스템�
 <img src = "6/img/6.png" width = "300" align="left">
 <img src = "6/img/7.png" width = "300" align="left">
 <img src = "6/img/8.png" width = "300" >
+
+<br><br>
 
 # 📁 7. XML 처리
 ### 📌 설명
