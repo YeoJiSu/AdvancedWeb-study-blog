@@ -5,21 +5,13 @@
 
 <br>
 
-###### :bulb: HTML5 and Script Languages
-###### :bulb: Cascading Style Sheets
-###### :bulb: JavaScript
-###### :bulb: Database: SQL, MSQL
-###### :bulb: PHP & Server side programming
-###### :bulb: XML
-###### :bulb: Ajax
-
 # 📁 1. CSS를 활용한 프로그램
 ### 📌 설명
 CSS pagination을 이용하여 select를 구현한다.
 
 flex-box와 object-fit를 이용하여 그림 하나를 16개로 나누어 분리하고, 그림 사이에는 box가 쳐지게 한다.
 ### 📌 결과 화면
-<img src = "1/img.png" width = "250" >
+<img src = "1/img.png" width = "400" >
 
 
 # 📁 2. 홈페이지 모니터링 시스템
@@ -31,9 +23,10 @@ iframe(HTML5)과 flex, pagination을 이용하여 홈페이지 감시 시스템�
 - 단, 늘일 수 있는 화면의 개수는 일단 8개로 제한한다.
 - 그리고 화면의 반쯤에는 우리가 클릭한(또는 마우스오버한) 화면이 크게 나타난다.
 ### 📌 결과 화면
-<img src = "2/img/1.png" width = "200" >
-<img src = "2/img/2.png" width = "200" >
-<img src = "2/img/3.png" width = "200" >
+
+<img src = "2/img/1.png" width = "300" align="left" >
+<img src = "2/img/2.png" width = "300" align="left" >
+<img src = "2/img/3.png" width = "300" >
 
 
 # 📁 3. DOM을 활용한 프로그램
@@ -43,29 +36,28 @@ iframe(HTML5)과 flex, pagination을 이용하여 홈페이지 감시 시스템�
 - 접근 가능한 페이지가 6개가 넘으면 scroll bar를 이용하여 볼 수 있게 한다.
 
 ### 📌 결과 화면
-<img src = "3/img/1.png">
-<img src = "3/img/2.png">
-<img src = "3/img/3.png">
+<img src = "3/img/1.png" width = "300" align="left">
+<img src = "3/img/2.png" width = "300" align="left">
+<img src = "3/img/3.png" width = "300" >
 
 # 📁 4. PHP로 데이터베이스(mysql) 접근
 ### 📌 설명
 - 데이터베이스에 접근하여 간단한 테이블을 생성하고, 자료를 추가, 삭제, 변경을 한다.
 
 ### 📌 결과 화면
-<img src = "4/img/1.png">
-<img src = "4/img/2.png">
+<img src = "4/img/1.png" width = "400" align="left">
+<img src = "4/img/2.png" width = "400">
 
-# 📁 5. PHP로 데이터베이스 활용 
+# 📁 5. PHP로 Server side programming
 ### 📌 설명
 - 개인 정보를 PHP로 데이터베이스에 저장한다.
 - $\_SERVER, S_ENV의 자료를 출력하여 내용을 분석한다.
 - 특히 수행하는 파일의 위치가 어디인지 PATH를 찾는다.
 
 ### 📌 결과 화면
-<img src = "5/img/1.png">
-<img src = "5/img/2.png">
-<img src = "5/img/3.png">
-<img src = "5/img/4.png">
+<img src = "5/img/1.png" width = "300" align="left">
+<img src = "5/img/2.png" width = "300" align="left">
+<img src = "5/img/4.png" width = "300" >
 
 # 📁 6. JSON 자료 활용
 ### 📌 설명
@@ -74,13 +66,13 @@ iframe(HTML5)과 flex, pagination을 이용하여 홈페이지 감시 시스템�
 - cookie를 이용하여 자료를 저장하고 찾는다.
 
 ### 📌 결과 화면
-<img src = "6/img/1.png">
-<img src = "6/img/2.png">
-<img src = "6/img/3.png">
-<img src = "6/img/5.png">
-<img src = "6/img/6.png">
-<img src = "6/img/7.png">
-<img src = "6/img/8.png">
+<img src = "6/img/1.png" width = "300" align="left">
+<img src = "6/img/2.png" width = "300" align="left">
+<img src = "6/img/3.png" width = "300" align="left">
+<img src = "6/img/5.png" width = "450" align="left">
+<img src = "6/img/6.png" width = "300" align="left">
+<img src = "6/img/7.png" width = "300" align="left">
+<img src = "6/img/8.png" width = "300" >
 
 # 📁 7. XML 처리
 ### 📌 설명
@@ -89,15 +81,16 @@ iframe(HTML5)과 flex, pagination을 이용하여 홈페이지 감시 시스템�
 - 표현한 내용을 그림 15-24(수업 시간에 설명한 프로그램) 프로그램에 loading하여 navigation하는 과정을 보인다.
 
 ### 📌 결과 화면
-<img src = "7/img/1.png">
-<img src = "7/img/2.png">
-<img src = "7/img/3.png">
-<img src = "7/img/4.png">
+<img src = "7/img/1.png" width = "400" align="left">
+<img src = "7/img/2.png" width = "400" align="left">
+<img src = "7/img/3.png" width = "400" align="left">
+<img src = "7/img/4.png" width = "400" >
 
+<br><br>
 
 # 📁 8. Ajax 활용
 ### 📌 설명
 - 특별한 사진과 설명을 추가하여 사진 내용 설명이 가능하게 바꾸어본다.
 ### 📌 결과 화면
-<img src = "8/img/1.png">
-<img src = "8/img/2.png">
+<img src = "8/img/1.png" width = "400" align="left">
+<img src = "8/img/2.png" width = "400" >
