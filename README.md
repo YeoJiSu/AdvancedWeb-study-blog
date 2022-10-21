@@ -89,12 +89,12 @@ iframe(HTML5)과 flex, pagination을 이용하여 홈페이지 감시 시스템�
 - 표현한 내용을 그림 15-24(수업 시간에 설명한 프로그램) 프로그램에 loading하여 navigation하는 과정을 보인다.
 
 ### 📌 결과 화면
-<img src = "7/img/1.png" width = "400" align="left">
-<img src = "7/img/2.png" width = "400" align="left">
-<img src = "7/img/3.png" width = "400" align="left">
-<img src = "7/img/4.png" width = "400" >
+<img src = "7/img/1.png" width = "300" align="left">
+<img src = "7/img/2.png" width = "300" align="left">
+<img src = "7/img/3.png" width = "300" align="left">
+<img src = "7/img/4.png" width = "300" >
 
-<p align = "right"></p>
+<br><br>
 
 # 📁 8. Ajax 활용
 ### 📌 설명
