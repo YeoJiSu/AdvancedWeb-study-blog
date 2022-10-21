@@ -25,9 +25,9 @@ iframe(HTML5)과 flex, pagination을 이용하여 홈페이지 감시 시스템�
 - 그리고 화면의 반쯤에는 우리가 클릭한(또는 마우스오버한) 화면이 크게 나타난다.
 ### 📌 결과 화면
 
-<img src = "2/img/1.png" width = "300" align="left" >
-<img src = "2/img/2.png" width = "300" align="left" >
-<img src = "2/img/3.png" width = "300" >
+<img src = "2/img/1.png" width = "250" align="left" >
+<img src = "2/img/2.png" width = "250" align="left" >
+<img src = "2/img/3.png" width = "250" >
 
 <br><br>
 
@@ -38,9 +38,9 @@ iframe(HTML5)과 flex, pagination을 이용하여 홈페이지 감시 시스템�
 - 접근 가능한 페이지가 6개가 넘으면 scroll bar를 이용하여 볼 수 있게 한다.
 
 ### 📌 결과 화면
-<img src = "3/img/1.png" width = "300" align="left">
-<img src = "3/img/2.png" width = "300" align="left">
-<img src = "3/img/3.png" width = "300" >
+<img src = "3/img/1.png" width = "250" align="left">
+<img src = "3/img/2.png" width = "250" align="left">
+<img src = "3/img/3.png" width = "250" >
 
 <br><br>
 
@@ -59,9 +59,9 @@ iframe(HTML5)과 flex, pagination을 이용하여 홈페이지 감시 시스템�
 - 특히 수행하는 파일의 위치가 어디인지 PATH를 찾는다.
 
 ### 📌 결과 화면
-<img src = "5/img/1.png" width = "300" align="left">
-<img src = "5/img/2.png" width = "300" align="left">
-<img src = "5/img/4.png" width = "300" >
+<img src = "5/img/1.png" width = "250" align="left">
+<img src = "5/img/2.png" width = "250" align="left">
+<img src = "5/img/4.png" width = "250" >
 
 <br><br>
 
