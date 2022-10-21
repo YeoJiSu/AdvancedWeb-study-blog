@@ -94,7 +94,7 @@ iframe(HTML5)과 flex, pagination을 이용하여 홈페이지 감시 시스템�
 <img src = "7/img/3.png" width = "400" align="left">
 <img src = "7/img/4.png" width = "400" >
 
-<p align = "justify"></p>
+<p align = "right"></p>
 
 # 📁 8. Ajax 활용
 ### 📌 설명
