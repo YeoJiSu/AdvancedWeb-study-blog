@@ -21,7 +21,6 @@ flex-box와 object-fit를 이용하여 그림 하나를 16개로 나누어 분�
 ### 📌 결과 화면
 <img src = "1/img.png" width = "250" >
 
-<br><br>
 
 # 📁 2. 홈페이지 모니터링 시스템
 ### 📌 설명
@@ -36,30 +35,69 @@ iframe(HTML5)과 flex, pagination을 이용하여 홈페이지 감시 시스템�
 <img src = "2/img/2.png" width = "200" >
 <img src = "2/img/3.png" width = "200" >
 
-<br><br>
-
 
 # 📁 3. DOM을 활용한 프로그램
+### 📌 설명
 - 특정한 URL을 넣으면 그 사이트 내용이 화면에 크게 보이고,
 - 그 사이트에서 접근 가능한 페이지의 내용이 작게 모두 보이게 한다.
 - 접근 가능한 페이지가 6개가 넘으면 scroll bar를 이용하여 볼 수 있게 한다.
 
+### 📌 결과 화면
+<img src = "3/img/1.png">
+<img src = "3/img/2.png">
+<img src = "3/img/3.png">
+
 # 📁 4. PHP로 데이터베이스(mysql) 접근
+### 📌 설명
 - 데이터베이스에 접근하여 간단한 테이블을 생성하고, 자료를 추가, 삭제, 변경을 한다.
 
+### 📌 결과 화면
+<img src = "4/img/1.png">
+<img src = "4/img/2.png">
+
 # 📁 5. PHP로 데이터베이스 활용 
+### 📌 설명
 - 개인 정보를 PHP로 데이터베이스에 저장한다.
 - $\_SERVER, S_ENV의 자료를 출력하여 내용을 분석한다.
 - 특히 수행하는 파일의 위치가 어디인지 PATH를 찾는다.
 
+### 📌 결과 화면
+<img src = "5/img/1.png">
+<img src = "5/img/2.png">
+<img src = "5/img/3.png">
+<img src = "5/img/4.png">
+
 # 📁 6. JSON 자료 활용
+### 📌 설명
 - JSON을 이용하여 서버에 자료를 보내고, 이를 다시 클라이언트에 저장한다.
 - JSON을 이용하여 web storage에 자료를 저장하고 찾는다.
 - cookie를 이용하여 자료를 저장하고 찾는다.
 
+### 📌 결과 화면
+<img src = "6/img/1.png">
+<img src = "6/img/2.png">
+<img src = "6/img/3.png">
+<img src = "6/img/5.png">
+<img src = "6/img/6.png">
+<img src = "6/img/7.png">
+<img src = "6/img/8.png">
+
 # 📁 7. XML 처리
+### 📌 설명
 - 데이터베이스에 저장한 자료에 대한 DTD를 작성한다.
 - 이를 바탕으로 지금까지 사용한 자료를 XML로 표현한다.
 - 표현한 내용을 그림 15-24(수업 시간에 설명한 프로그램) 프로그램에 loading하여 navigation하는 과정을 보인다.
+
+### 📌 결과 화면
+<img src = "7/img/1.png">
+<img src = "7/img/2.png">
+<img src = "7/img/3.png">
+<img src = "7/img/4.png">
+
+
 # 📁 8. Ajax 활용
+### 📌 설명
 - 특별한 사진과 설명을 추가하여 사진 내용 설명이 가능하게 바꾸어본다.
+### 📌 결과 화면
+<img src = "8/img/1.png">
+<img src = "8/img/2.png">
